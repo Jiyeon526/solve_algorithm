@@ -61,14 +61,9 @@ public class swea_부먹왕국의차원관문 {
 					city[idx] = 1;
 				}
 			}
-			
 			System.out.println("#" + tc + " " + count);
-			
-			
 		}
-
 	}
-
 }
 ```
 
@@ -77,3 +72,11 @@ public class swea_부먹왕국의차원관문 {
 #### :grey_question: 궁금
 
 - 나는 시간이 700ms가 나왔는데 다른 사람은 200ms이다...? 코드를 봐도 이해가 안된다.. 어떻게 생각한건지......
+
+  :open_mouth:  알았다! 버퍼드리더!!! 나는 scanner를 써서 하나씩 입력을 받는데 버퍼드리더를 쓰면 한 줄씩 입력을 받아서 시간이 차이가 나는것!!!
+
+
+
+#### :globe_with_meridians: 출처
+
+- https://swexpertacademy.com/main/talk/solvingClub/problemView.do?contestProbId=AWuSgKpqmooDFASy&solveclubId=AXdbtMcKyWIDFAUO&problemBoxTitle=day0210_IM%EB%8C%80%EB%B9%84&problemBoxCnt=5&probBoxId=AXeKrTbaokYDFAUO&&&&&
