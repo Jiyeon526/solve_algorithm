@@ -82,6 +82,18 @@ if(people_sum < i) {
 people_sum += people[i];
 ```
 
+- 같은게 아니였다!!!
+
+```java
+//위에
+people_sum = i + people[i];
+// 이 부분이
+people_sum += i;
+// 이렇게 바뀌는게 아니라
+people_sum = i;
+// 이렇게 되야지 같은 코드였다
+```
+
 
 
 
