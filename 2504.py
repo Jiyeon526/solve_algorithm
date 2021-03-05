@@ -1,30 +1,8 @@
-# 백준 2504번 괄호의 값
-
-### 문제 설명
-
-- 문제
-  - '(',')','[',']'로 이루워진 완벽한 괄호들 중 괄호의 값을 계산한다.
-  - ‘()’ 인 괄호열의 값은 2이다.
-  - ‘[]’ 인 괄호열의 값은 3이다.
-  - ‘(X)’ 의 괄호값은 2×값(X) 으로 계산된다.
-  - ‘[X]’ 의 괄호값은 3×값(X) 으로 계산된다.
-  - 올바른 괄호열 X와 Y가 결합된 XY의 괄호값은 값(XY)= 값(X)+값(Y) 로 계산된다.
-- 입력
-  - 첫째 줄에 괄호열을 나타내는 문자열(스트링)이 주어진다. 단 그 길이는 1 이상, 30 이하이다.
-- 출력
-  - 첫째 줄에 그 괄호열의 값을 나타내는 정수를 출력한다. 만일 입력이 올바르지 못한 괄호열이면 반드시 0을 출력해야 한다. 
-
-
-
-### :dizzy_face: 내가 푼 답
-
-```python
 import sys
 from collections import deque
 
 input = sys.stdin.readline
 
-# 완벽한 문자열인지 체크
 def complete(str):
     stack = deque()
     for i in str:
@@ -41,7 +19,6 @@ def complete(str):
         return False
     return True
 
-# 문자열의 값을 계산
 def total(str):
     sum_total = 0
     stack = deque()
@@ -89,5 +66,5 @@ if complete(str):
     print(answer)
 else:
     print(0)
-```
 
+    
