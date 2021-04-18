@@ -23,73 +23,21 @@ def find(start):
 
 for _ in range(test_case):
     shop_num = int(input())
-    location = [[0,0] for _ in range(shop_num+2)]
-    visited = [False for _ in range(shop_num+2)]
-    connect = [[] for _ in range(shop_num+2)]
+    location = [[0,0] for _ in range(shop_num+2)] # 각 곳의 장소 위치 x, y 저장
+    visited = [False for _ in range(shop_num+2)] # 그곳에 방문했는지 안했는지 체크
+    connect = [[] for _ in range(shop_num+2)] # 서로 연결되어있는지 체크
 
     for i in range(shop_num+2):
         x, y = map(int, input().split())
         location[i][0] = x
         location[i][1] = y
     
+    # 두 곳을 비교해서 둘의 거리가 1000이하라면 연결됨을 표시
     for i in range(shop_num+2):
         for j in range(shop_num+2):
             if i == j:
                 continue
             if(abs(location[i][0] - location[j][0]) + abs(location[i][1] - location[j][1])) <= 1000:
-                connect[i].append(j)
+                connect[i].append(j) # i에서 j로 갈 수 있다.
     visited[0] = True
     find(0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # shop_num = int(input())
-    # home_x, home_y = map(int, input().split())
-
-    # shop = [[0, 0] for _ in range(shop_num)]
-    # for i in range(shop_num):
-    #     x, y = map(int, input().split())
-    #     shop[i][0] = x
-    #     shop[i][1] = y
-
-    # festival_x, festival_y = map(int, input().split())
-    
-    # visited = [False for _ in range(shop_num)]
-    # q = deque()
-    # q.append((home_x, home_y))
-    # check = False
-    # while q:
-    #     print(q)
-    #     x, y = q.popleft()
-    #     if (abs(x - festival_x) + abs(y - festival_y)) <= 1000:
-    #         check = True
-    #         print("happy")
-    #     elif False not in visited: #편의점 다 갔는데도 페스티벌 못감
-    #         check = True
-    #         print("sad")
-    #     else:
-    #         for i in range(shop_num):
-    #             if not visited[i] and (abs(x - shop[i][0]) + abs(y - shop[i][1])) <= 1000:
-    #                 visited[i] = True
-    #                 q.append((shop[i][0], shop[i][1]))
-
-    # if not check: # 맥주 다 마셔서 못감
-    #     print("sad")
-
-
-
-
