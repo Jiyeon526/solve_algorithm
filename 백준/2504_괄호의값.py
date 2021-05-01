@@ -45,16 +45,12 @@ def total(str):
         elif i == ']' and stack[-1] > 0:
             _sum = 0
             for j in range(len(stack)-1,-1,-1):
-                # print("J = ", j)
-                # print("iter ", stack)
                 if stack[j] == '[':
-                    # print("out")
                     stack.pop()
                     break
                 _sum += stack[j]
                 stack.pop()
             stack.append(3 * _sum)
-        # print(stack)
     return stack
         
 str = input()
