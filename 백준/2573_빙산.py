@@ -1,4 +1,3 @@
-# 시간초과 왜ㅗㅁ내ㅗ내오내애
 import sys
 from collections import deque
 import copy
