@@ -10,8 +10,8 @@ for i in range(R):
     M[i] = list(map(str, input().strip()))
 
 # 시작점 찾기
-qw = deque()
-q = deque()
+qw = deque() # 물의 위치
+q = deque() # 고슴도치의 위치
 visited = [[False for _ in range(C)] for _ in range(R)]
 for i in range(R):
     for j in range(C):
@@ -30,9 +30,8 @@ while q:
         break
 
     lenWater = len(qw)
-    for _ in range(lenWater):
+    for _ in range(lenWater): # 물이 차는 과정
         wx, wy = qw.popleft()
-        # print(wx, wy)
         for i in range(4):
             nwx = wx + dx[i]
             nwy = wy + dy[i]
@@ -42,14 +41,11 @@ while q:
                     qw.append((nwx, nwy))
                     visited[nwx][nwy] = True
 
-    # print("q = ", q)
-
     lenS = len(q)
-    # print("q= ", q)
-    for _ in range(lenS):
+    for _ in range(lenS): # 고슴도치 이동
         x, y, cnt = q.popleft()
 
-        if(M[x][y] == 'D'):
+        if(M[x][y] == 'D'): # 비버굴 만나면 종료
             print(cnt)
             check = True
             break
@@ -63,5 +59,5 @@ while q:
                     q.append((nx, ny, cnt+1))
                     visited[nx][ny] = True
 
-if not check:
+if not check: # 만약에 비버굴을 못만난다면
     print('KAKTUS')
