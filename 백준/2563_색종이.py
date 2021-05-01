@@ -4,14 +4,14 @@ input = sys.stdin.readline
 
 b_size = [[0]*100 for _ in range(100)]
 
-def area(x_1, y_1, x_2, y_2):
+def area(x_1, y_1, x_2, y_2): # 해당 종이가 같는 넓이를 b_size에 1로 표시
     for x in range(x_1, x_2):
         for y in range(y_1, y_2):
             if b_size[x][y] == 1:
                 continue
             b_size[x][y] = 1
     
-def count_size():
+def count_size(): # 종이 넓이 계산
     count = 0
 
     for x in range(100):
